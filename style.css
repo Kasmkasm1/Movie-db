@@ -1,0 +1,298 @@
+/* ==========================================
+   1. GENEL SIFIRLAMALAR VE KUTU MODELİ
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiasing;
+}
+
+/* Tüm Linklerin Varsayılan Stillerini Sıfırlama */
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Görsel Taşmalarını Engelleme */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form Elemanları Uyumu */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Metin Taşmalarını Engelleme */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* ==========================================
+   2. NAVBAR VE LOGO DÜZENLEMELERİ
+   ========================================== */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Menünün fotoğraf üstünde kalması için yüksek z-index */
+  padding: 20px 40px;
+  
+  display: flex;
+  justify-content: space-between; /* Logo solda, menü sağda */
+  align-items: center;
+}
+
+/* Sol Taraftaki Logo */
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  background-image: url('3535-removebg-preview.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+/* Link Renk Sınıfı */
+.nav-link, 
+.nav-link:visited, 
+.nav-link:active, 
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   3. HAMBURGER MENÜ VE DROPDOWN
+   ========================================== */
+.menu-container {
+  position: relative; /* Dropdown menüyü buna göre hizalar */
+}
+
+.hamburger-btn {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Gizli Açılır Menü Kutusu */
+.dropdown-menu {
+  display: none; /* Varsayılan olarak kapalı */
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  
+  background-color: rgba(20, 25, 35, 0.95); /* Koyu şeffaf arka plan */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  min-width: 150px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 101;
+}
+
+/* Tıklanınca Çalışan Sınıf */
+.dropdown-menu.show {
+  display: block !important;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 20px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   4. HEADER (HERO BÖLÜMÜ)
+   ========================================== */
+.header {
+  position: relative; /* Absolute navbar'ı kapsamak için şart */
+  background-image: url('1313.png');
+  padding: 190px 20px;
+  background-position: center;
+  text-align: center;
+  font-size: 42px;
+  background-size: cover;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+/* ==========================================
+   5. FORM VE BUTONLAR
+   ========================================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.button {
+  /* Koyu Mavi Sedef Geçişi: Derin Lacivert -> Gece Mavisi -> Çelik Mavisi */
+  background: linear-gradient(120deg, 
+    rgb(20, 35, 55) 0%,     /* Derin Gece Mavisi */
+    rgb(35, 65, 95) 35%,    /* Koyu Çelik Mavisi */
+    rgb(15, 25, 40) 70%,    /* Çok Koyu Lacivert */
+    rgb(50, 90, 125) 100%   /* Parlak Koyu Yansıma */
+  );
+  background-size: 200% 200%;
+  
+  color: rgb(240, 248, 255);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  
+  /* Kenarlık ve Parlaklık Efektleri */
+  border: 1px solid rgba(120, 170, 210, 0.4); /* Şeffaf çelik mavisi çizgi */
+  border-radius: 3px;
+  padding: 10px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+/* Mouse ile üzerine gelindiğinde (Hover) */
+.button:hover {
+  background-position: right center;
+  
+  /* Hover anında sedef pırıltısı biraz daha belirginleşir */
+  border-color: rgba(160, 205, 240, 0.7);
+  
+  transform: translateY(-2px);
+}
+
+/* Tıklandığı an (Active) */
+.button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+/* ==========================================
+   6. FOOTER
+   ========================================== */
+.footer {
+  /* Butonla birebir aynı koyu mavi sedef renk geçişi */
+  background: linear-gradient(120deg, 
+    rgb(20, 35, 55) 0%,     /* Derin Gece Mavisi */
+    rgb(35, 65, 95) 35%,    /* Koyu Çelik Mavisi */
+    rgb(15, 25, 40) 70%,    /* Çok Koyu Lacivert */
+    rgb(50, 90, 125) 100%   /* Koyu Yansıma */
+  );
+  background-size: 200% 200%;
+  
+  color: rgb(240, 248, 255);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  
+  /* Üst kısma ince sedefli çizgi ve yukarı doğru yumuşak gölge */
+  border-top: 1px solid rgba(120, 170, 210, 0.3);
+  padding: 8px 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 11px;
+  z-index: 99; /* Sayfa elemanlarının üstünde kalması için */
+}
+
+/* Film Kartlarının Genel Izgarası */
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tek Bir Film Kartı */
+.movie-card {
+  background-color: rgb(20, 35, 55);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.movie-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.movie-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.movie-rating {
+  font-size: 0.85rem;
+  color: rgb(180, 215, 235);
+}

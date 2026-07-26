@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-logo"></a>
+        <div class="menu-container">
+        <button class="hamburger-btn" id="menuBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Tıklanınca Açılacak Liste -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="about.html" class="dropdown-item">About</a>
+            <a href="about.html" class="dropdown-item">Account</a>
+            <a href="about.html" class="dropdown-item">Contact</a>
+            <a href="about.html" class="dropdown-item">Company</a>
+        </div>
+    </div>
+    </nav>
+    <header class="header">What you want to watch?</header>
+    <form class="form" id="searchForm">
+    <input type="text" class="input" id="searchInput" placeholder="Search for a movie..."><br />
+    <button type="submit" class="button">Search</button>
+</form>
+
+<!-- Film Kartlarının Dizileceği Alan -->
+<main class="movies-container" id="moviesContainer"></main>
+    <footer class="footer">All rights reserved. &copy; 2023 Movie Database (built with only educational purposes)</footer>
+    <script src="script.js"></script>
+</body>
+</html>   
