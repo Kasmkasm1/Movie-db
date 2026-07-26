@@ -51,9 +51,3 @@ Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları t
 5. **Uygulamayı Başlatın:**
    - `index.html` dosyasını tarayıcınızda açarak projeyi hemen kullanmaya başlayabilirsiniz.
 
----
-
-## 📸 Ekran Görüntüleri
-
-> *Buraya projenizin ekran görüntülerini veya GIF demolarını ekleyebilirsiniz.*
-
