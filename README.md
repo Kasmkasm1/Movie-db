@@ -57,8 +57,3 @@ Projeyi yerel bilgisayarınızda çalıştırmak için aşağıdaki adımları t
 
 > *Buraya projenizin ekran görüntülerini veya GIF demolarını ekleyebilirsiniz.*
 
----
-
-## 📄 Lisans
-
-Bu proje [MIT](LICENSE) lisansı altında korunmaktadır.
